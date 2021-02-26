@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from '@angular/fire';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -15,7 +16,8 @@ import { ListarTarjetaComponent } from './components/listar-tarjeta/listar-tarje
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule
 
   ],
   providers: [],
