@@ -9,19 +9,19 @@
 
             <div class="input-group input-group-lg mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="fas fa-credit-card"></i></span>
-                <input type="text" formControlName="numeroTarjeta" class="form-control" placeholder="Numero Tarjeta">
+                <input type="text" maxlength="16" formControlName="numeroTarjeta" class="form-control" placeholder="Numero Tarjeta">
             </div>
             <div class="row">
                 <div class="col-lg-7">
                     <div class="input-group input-group-lg mb-3">
                         <span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar-alt"></i></span>
-                        <input type="text" formControlName="fechaExpiracion" class="form-control" placeholder="MM/VV">
+                        <input type="text" maxlength="5" formControlName="fechaExpiracion" class="form-control" placeholder="MM/VV">
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="input-group input-group-lg mb-3">
                         <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
-                        <input formControlName="cvv" type="password" class="form-control" placeholder="CVV">
+                        <input maxlength="3" formControlName="cvv" type="password" class="form-control" placeholder="CVV">
                     </div>
                 </div>
             </div>
