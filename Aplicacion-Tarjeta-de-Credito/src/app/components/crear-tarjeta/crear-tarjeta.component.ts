@@ -13,6 +13,7 @@ export class CrearTarjetaComponent implements OnInit {
   titulo='Agregar Tarjeta'
   form: FormGroup
   loading= false
+  id: string | undefined
 
   constructor( private fb:FormBuilder,
                private tarjetaServicio: TarjetaService,
@@ -37,7 +38,7 @@ export class CrearTarjetaComponent implements OnInit {
     })
   }
 
-  crearTarjeta() {
+  guardarTarjeta() {
     const TARJETA: TarjetaCredito = {
       titular: this.form.value.titular,
       numeroTarjeta: this.form.value.numeroTarjeta,
