@@ -38,10 +38,13 @@ export class CrearTarjetaComponent implements OnInit {
     }
 
     this.tarjetaServicio.guardarTarjeta(TARJETA).then(() => {
+      console.log('tarjeta registrado');
+      this.toastr.success('La tarjete fue registrada con exito!', 'Tarjeta registrada');
       this.form.reset();
-    }, error =>{
-      console.log(error)
-    } )
+    }, error => {
+      this.toastr.error('Opps.. ocurrio un error', 'Error');
+      console.log(error);
+    })
 
   }
 
