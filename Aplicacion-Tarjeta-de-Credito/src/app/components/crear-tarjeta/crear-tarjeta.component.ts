@@ -63,7 +63,8 @@ export class CrearTarjetaComponent implements OnInit {
       console.log('tarjeta registrado');
       this.form.reset();
     }, error => {
-      
+      this.loading=false
+      this.toastr.error('Lo siento... ocurrio un error', 'Error');
       console.log(error);
     })
   }
