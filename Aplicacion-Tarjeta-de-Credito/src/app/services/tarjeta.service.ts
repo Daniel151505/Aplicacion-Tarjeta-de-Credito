@@ -8,16 +8,20 @@ import { TarjetaCredito } from '../models/TarjetaCredito';
 })
 export class TarjetaService {
 
-  constructor(private firebase: AngularFirestore) { }
+  constructor(private firestore: AngularFirestore) { }
 
   guardarTarjeta(tarjeta: TarjetaCredito): Promise<any> {
-    return this.firebase.collection('tarjetas').add(tarjeta)
+    return this.firestore.collection('tarjetas').add(tarjeta)
   }
 
   obtenerTarjetas(): Observable<any> {
-    return this.firebase.collection('tarjetas', ref => 
+    return this.firestore.collection('tarjetas', ref => 
           ref.orderBy('fechaCreacion','asc')
     ).snapshotChanges()
+  }
+
+  eliminarTarjeta(id: string) : Promise<any> {
+    return this.firestore.collection('tarjetas').doc(id).delete()
   }
 
 }
