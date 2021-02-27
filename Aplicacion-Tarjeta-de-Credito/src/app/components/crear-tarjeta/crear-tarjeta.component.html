@@ -11,7 +11,7 @@
                        [class.red-icon]="this.form.get('titular').invalid && this.form.get('titular').touched"
                        class="fas fa-user-circle"></i>
                 </span>
-                <input formControlName="titular" type="text" class="form-control" placeholder="Titular">
+                <input formControlName="titular" maxlength="30" type="text" class="form-control" placeholder="Nombre del titular">
             </div>
 
             <div class="input-group input-group-lg mb-3">
@@ -20,7 +20,7 @@
                        [class.red-icon]="this.form.get('numeroTarjeta').invalid && this.form.get('numeroTarjeta').touched" 
                        class="fas fa-credit-card"></i>
                 </span>
-                <input type="text" maxlength="16" formControlName="numeroTarjeta" class="form-control" placeholder="Numero Tarjeta">
+                <input type="text" maxlength="16" formControlName="numeroTarjeta" class="form-control" placeholder="Ingresa tu número de tarjeta de 16 dígitos">
             </div>
             <div class="row">
                 <div class="col-lg-7">
