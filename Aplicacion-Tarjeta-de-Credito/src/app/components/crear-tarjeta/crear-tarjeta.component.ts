@@ -62,7 +62,7 @@ export class CrearTarjetaComponent implements OnInit {
     this.tarjetaServicio.guardarTarjeta(TARJETA).then(() => {
       this.loading=false
       console.log('tarjeta registrado');
-      this.toastr.success('La tarjeta fue registrada con éxito!', 'Tarjeta registrada');
+      this.toastr.success('La tarjeta fue registrada con éxito!', 'Tarjeta Registrada');
       this.form.reset();
     }, error => {
       this.loading=false
@@ -85,7 +85,7 @@ export class CrearTarjetaComponent implements OnInit {
       this.titulo = 'Agregar Tarjeta'
       this.form.reset()
       this.id = undefined
-      this.toastr.info('La tarjeta fue actualizad con éxito', "Registro Actualizado" )
+      this.toastr.info('La tarjeta fue actualizada con éxito', "Tarjeta Actualizada" )
       }, error => {
         console.log(error);
       })
