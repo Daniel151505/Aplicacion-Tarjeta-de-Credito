@@ -30,4 +30,8 @@ export class TarjetaService {
     this.tarjeta$.next(tarjeta)
   }
 
+  getTarjetaEditar():Observable<TarjetaCredito>{
+    return this.tarjeta$.asObservable()
+  }
+
 }
