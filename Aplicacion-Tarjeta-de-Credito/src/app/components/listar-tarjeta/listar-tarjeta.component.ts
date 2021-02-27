@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { element } from 'protractor';
 import { TarjetaCredito } from 'src/app/models/TarjetaCredito';
 import { TarjetaService } from 'src/app/services/tarjeta.service';
@@ -12,7 +13,8 @@ export class ListarTarjetaComponent implements OnInit {
 
   listarTarjetas: TarjetaCredito[] = []
 
-  constructor(private tarjetaService: TarjetaService) { }
+  constructor(private tarjetaService: TarjetaService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.obtenerTajetas()
@@ -27,6 +29,14 @@ export class ListarTarjetaComponent implements OnInit {
           ...element.payload.doc.data()
         })
       })
+    })
+  }
+
+  eliminarTarjeta(id:any){
+    this.tarjetaService.eliminarTarjeta(id).then(()=> {
+
+    }, error => {
+
     })
   }
 
