@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { TarjetaCredito } from '../models/TarjetaCredito';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TarjetaService {
+
+  private tarjeta$ = new Subject<any>()
 
   constructor(private firestore: AngularFirestore) { }
 
@@ -22,6 +24,10 @@ export class TarjetaService {
 
   eliminarTarjeta(id: string) : Promise<any> {
     return this.firestore.collection('tarjetas').doc(id).delete()
+  }
+
+  editarTarjeta(tarjeta: TarjetaCredito){
+    this.tarjeta$.next(tarjeta)
   }
 
 }
