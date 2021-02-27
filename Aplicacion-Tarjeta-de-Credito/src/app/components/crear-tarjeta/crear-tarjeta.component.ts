@@ -34,6 +34,13 @@ export class CrearTarjetaComponent implements OnInit {
       fechaCreacion: new Date(),
       fechaActualizacion: new Date()
     }
+
+    this.tarjetaServicio.guardarTarjeta(TARJETA).then(() => {
+      this.form.reset();
+    }, error =>{
+      console.log(error)
+    } )
+
   }
 
 }
