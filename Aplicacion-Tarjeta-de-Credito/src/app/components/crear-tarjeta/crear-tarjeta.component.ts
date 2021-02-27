@@ -39,6 +39,15 @@ export class CrearTarjetaComponent implements OnInit {
   }
 
   guardarTarjeta() {
+
+    if (this.id === undefined) {
+      
+    }else {
+
+    }
+  }
+
+  agregarTarjeta(){
     const TARJETA: TarjetaCredito = {
       titular: this.form.value.titular,
       numeroTarjeta: this.form.value.numeroTarjeta,
@@ -59,7 +68,6 @@ export class CrearTarjetaComponent implements OnInit {
       this.toastr.error('Opps.. ocurrio un error', 'Error');
       console.log(error);
     })
-
   }
 
 }
