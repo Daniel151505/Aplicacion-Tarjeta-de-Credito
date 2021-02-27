@@ -34,6 +34,8 @@ export class TarjetaService {
     return this.tarjeta$.asObservable()
   }
 
-  ed
+  editarTarjeta(id:string, tarjeta: any):Promise<any> {
+    return this.firestore.collection('tarjetas').doc(id).update(tarjeta)
+  }
 
 }
