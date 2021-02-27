@@ -28,6 +28,7 @@ export class CrearTarjetaComponent implements OnInit {
 
   ngOnInit(): void {
     this.tarjetaServicio.getTarjetaEditar().subscribe(data => {
+      this.id = data.id
       this.titulo = 'Editar Tarjeta'
         this.form.patchValue({
           titular: data.titular,
