@@ -28,7 +28,7 @@ export class CrearTarjetaComponent implements OnInit {
 
   ngOnInit(): void {
     this.tarjetaServicio.getTarjetaEditar().subscribe(data => {
-        this.titulo = 'Editar Tarjeta'
+      this.titulo = 'Editar Tarjeta'
         this.form.patchValue({
           titular: data.titular,
           numeroTarjeta: data.numeroTarjeta,
@@ -41,9 +41,7 @@ export class CrearTarjetaComponent implements OnInit {
   guardarTarjeta() {
 
     if (this.id === undefined) {
-      
     }else {
-
     }
   }
 
@@ -61,13 +59,32 @@ export class CrearTarjetaComponent implements OnInit {
     this.tarjetaServicio.guardarTarjeta(TARJETA).then(() => {
       this.loading=false
       console.log('tarjeta registrado');
-      this.toastr.success('La tarjete fue registrada con exito!', 'Tarjeta registrada');
       this.form.reset();
     }, error => {
-      this.loading=false
-      this.toastr.error('Opps.. ocurrio un error', 'Error');
+
       console.log(error);
     })
+  }
+
+  editarTarjeta(id:string){
+    const TARJETA:any = {
+      titular: this.form.value.titular,
+      numeroTarjeta: this.form.value.numeroTarjeta,
+      fechaExpiracion: this.form.value.fechaExpiracion,
+      cvv: this.form.value.cvv,
+      fechaActualizacion: new Date()
+    }
+      this.loading=true
+      this.tarjetaServicio.editarTarjeta(id,TARJETA).then(() =>{
+      this.loading = false
+      this.titulo = 'Agregar Tarjeta'
+      this.form.reset()
+      this.id = undefined
+      this.toastr.info('La tarjeta fue actualizad con éxito', "Registro Actualizado" )
+      }, error => {
+        console.log(error);
+      })
+    
   }
 
 }
