@@ -41,7 +41,9 @@ export class CrearTarjetaComponent implements OnInit {
   guardarTarjeta() {
 
     if (this.id === undefined) {
+      this.agregarTarjeta()
     }else {
+      this.editarTarjeta(this.id)
     }
   }
 
@@ -61,7 +63,7 @@ export class CrearTarjetaComponent implements OnInit {
       console.log('tarjeta registrado');
       this.form.reset();
     }, error => {
-
+      
       console.log(error);
     })
   }
