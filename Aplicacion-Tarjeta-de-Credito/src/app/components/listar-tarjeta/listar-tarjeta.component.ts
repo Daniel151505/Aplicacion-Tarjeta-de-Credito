@@ -34,9 +34,9 @@ export class ListarTarjetaComponent implements OnInit {
 
   eliminarTarjeta(id:any){
     this.tarjetaService.eliminarTarjeta(id).then(()=> {
-
+        this.toastr.error('La Tarjeta fue eliminada con éxito','Registro Eliminado')
     }, error => {
-
+        this.toastr.error('Lo siento ... ocurrio un error', 'Error')
     })
   }
 
