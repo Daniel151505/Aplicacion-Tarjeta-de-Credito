@@ -42,7 +42,7 @@ export class ListarTarjetaComponent implements OnInit {
   }
 
   editarTarjeta(tarjeta: TarjetaCredito){
-    this.tarjetaService.editarTarjeta(tarjeta)
+    this.tarjetaService.addeditarTarjeta(tarjeta)
   }
 
 

@@ -26,12 +26,14 @@ export class TarjetaService {
     return this.firestore.collection('tarjetas').doc(id).delete()
   }
 
-  editarTarjeta(tarjeta: TarjetaCredito){
+  addeditarTarjeta(tarjeta: TarjetaCredito){
     this.tarjeta$.next(tarjeta)
   }
 
   getTarjetaEditar():Observable<TarjetaCredito>{
     return this.tarjeta$.asObservable()
   }
+
+  ed
 
 }
