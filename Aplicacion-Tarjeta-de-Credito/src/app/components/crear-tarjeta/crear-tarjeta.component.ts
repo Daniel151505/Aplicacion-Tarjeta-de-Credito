@@ -10,7 +10,7 @@ import { TarjetaService } from 'src/app/services/tarjeta.service';
   styleUrls: ['./crear-tarjeta.component.css']
 })
 export class CrearTarjetaComponent implements OnInit {
-
+  titulo='Agregar Tarjeta'
   form: FormGroup
   loading= false
 
@@ -26,6 +26,9 @@ export class CrearTarjetaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.tarjetaServicio.getTarjetaEditar().subscribe(data => {
+
+    })
   }
 
   crearTarjeta() {
