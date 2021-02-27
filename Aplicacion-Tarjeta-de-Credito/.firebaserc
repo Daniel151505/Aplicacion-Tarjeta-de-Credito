@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "tarjeta-de-credito": {
+      "hosting": {
+        "Aplicacion-Tarjeta-de-Credito": [
+          "tarjeta-de-credito"
+        ]
+      }
+    }
+  }
+}
