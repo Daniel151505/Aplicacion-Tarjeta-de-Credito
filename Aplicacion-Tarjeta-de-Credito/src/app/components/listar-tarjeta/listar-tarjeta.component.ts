@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { element } from 'protractor';
+import { Subject } from 'rxjs';
 import { TarjetaCredito } from 'src/app/models/TarjetaCredito';
 import { TarjetaService } from 'src/app/services/tarjeta.service';
 
@@ -10,7 +11,7 @@ import { TarjetaService } from 'src/app/services/tarjeta.service';
   styleUrls: ['./listar-tarjeta.component.css']
 })
 export class ListarTarjetaComponent implements OnInit {
-
+  private tarjet$ = new Subject<any>()
   listarTarjetas: TarjetaCredito[] = []
 
   constructor(private tarjetaService: TarjetaService,
@@ -38,6 +39,10 @@ export class ListarTarjetaComponent implements OnInit {
     }, error => {
         this.toastr.error('Lo siento ... ocurrio un error', 'Error')
     })
+  }
+
+  editarTarjeta(tarjeta: TarjetaCredito){
+    this.tarjetaService.editarTarjeta(tarjeta)
   }
 
 
